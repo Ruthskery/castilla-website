@@ -539,15 +539,6 @@ function News() {
               The latest from the Barangay Hall
             </h2>
           </Reveal>
-          <Reveal>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-semibold cursor-pointer transition-colors duration-200"
-            >
-              View all news
-              <Icon.ArrowRight className="w-4 h-4" />
-            </a>
-          </Reveal>
         </div>
 
         <StaggerGroup className="grid md:grid-cols-3 gap-6">
@@ -801,8 +792,8 @@ function Contact() {
             We&apos;re here to help.
           </h2>
           <p className="text-secondary text-lg leading-relaxed mb-8">
-            Visit us at the Barangay Hall during office hours, or send a
-            message and our staff will get back to you within one business day.
+            Visit us at the Barangay Hall during office hours, and our staff
+            will be glad to help.
           </p>
 
           <ul className="space-y-5">
@@ -841,114 +832,37 @@ function Contact() {
         </Reveal>
 
         <Reveal className="lg:col-span-7" delay={0.1}>
-          <form
-            className="bg-card border border-border rounded-2xl p-7 md:p-9 shadow-sm"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <h3 className="font-display text-2xl font-semibold text-primary mb-6">
-              Send us a message
+          {/* No online form yet: messages had nowhere to go, so point people
+              to the Barangay Hall instead of a form that silently drops them. */}
+          <div className="bg-card border border-border rounded-2xl p-7 md:p-9 shadow-sm">
+            <h3 className="font-display text-2xl font-semibold text-primary mb-3">
+              Visit the Barangay Hall
             </h3>
-            <div className="grid sm:grid-cols-2 gap-5">
-              <div className="sm:col-span-1">
-                <label
-                  htmlFor="firstName"
-                  className="block text-sm font-semibold text-primary mb-2"
-                >
-                  First name
-                </label>
-                <input
-                  id="firstName"
-                  name="firstName"
-                  type="text"
-                  required
-                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none transition-colors duration-200"
-                  placeholder="Juan"
-                />
-              </div>
-              <div className="sm:col-span-1">
-                <label
-                  htmlFor="lastName"
-                  className="block text-sm font-semibold text-primary mb-2"
-                >
-                  Last name
-                </label>
-                <input
-                  id="lastName"
-                  name="lastName"
-                  type="text"
-                  required
-                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none transition-colors duration-200"
-                  placeholder="Dela Cruz"
-                />
-              </div>
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-semibold text-primary mb-2"
-                >
-                  Email address
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none transition-colors duration-200"
-                  placeholder="you@example.com"
-                />
-              </div>
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="topic"
-                  className="block text-sm font-semibold text-primary mb-2"
-                >
-                  How can we help?
-                </label>
-                <select
-                  id="topic"
-                  name="topic"
-                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:border-accent focus:outline-none transition-colors duration-200 cursor-pointer"
-                  defaultValue=""
-                >
-                  <option value="" disabled>
-                    Select a topic
-                  </option>
-                  <option>Request a certificate</option>
-                  <option>Report a concern</option>
-                  <option>SK youth programs</option>
-                  <option>General inquiry</option>
-                </select>
-              </div>
-              <div className="sm:col-span-2">
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-semibold text-primary mb-2"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  required
-                  className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none transition-colors duration-200 resize-y"
-                  placeholder="Tell us a bit about what you need…"
-                />
-              </div>
-            </div>
-            <button
-              type="submit"
-              className="mt-7 inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-lg font-semibold hover:bg-accent transition-colors duration-200 cursor-pointer"
-            >
-              Send message
-              <Icon.ArrowRight className="w-5 h-5" />
-            </button>
-            <p className="text-xs text-muted-foreground mt-4">
-              By submitting, you agree that your information will be used solely
-              to respond to your inquiry, in accordance with the Data Privacy
-              Act of 2012.
+            <p className="text-secondary leading-relaxed mb-6">
+              Our staff can help you in person, Monday to Friday, 8:00 AM to
+              5:00 PM. Come by for:
             </p>
-          </form>
+            <ul className="space-y-3 mb-8">
+              {[
+                "Requesting a certificate",
+                "Reporting a concern",
+                "SK youth programs",
+                "General inquiries",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <Icon.Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                  <span className="text-primary">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="#services"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-lg font-semibold hover:bg-accent transition-colors duration-200 cursor-pointer"
+            >
+              See our services
+              <Icon.ArrowRight className="w-5 h-5" />
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>
@@ -1051,26 +965,6 @@ function Footer() {
           <div>
             © {new Date().getFullYear()} Barangay Cumadcad. All rights
             reserved.
-          </div>
-          <div className="flex gap-5">
-            <a
-              href="#"
-              className="hover:text-white transition-colors duration-200 cursor-pointer"
-            >
-              Privacy
-            </a>
-            <a
-              href="#"
-              className="hover:text-white transition-colors duration-200 cursor-pointer"
-            >
-              Transparency Seal
-            </a>
-            <a
-              href="#"
-              className="hover:text-white transition-colors duration-200 cursor-pointer"
-            >
-              Accessibility
-            </a>
           </div>
         </div>
       </div>
