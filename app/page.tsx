@@ -270,7 +270,7 @@ function NavBar() {
       >
         <a href="#top" className="flex items-center gap-2.5 sm:gap-3 group cursor-pointer min-w-0">
           <Image
-            src="/Cumadcad-logo.webp"
+            src="/Cumadcad-logo.png"
             alt="Barangay Cumadcad official seal"
             width={40}
             height={40}
@@ -426,19 +426,18 @@ function Hero() {
           <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-7 text-white">
             <div className="flex items-center gap-3 mb-5">
               <div className="w-11 h-11 rounded-lg bg-gold/20 border border-gold/40 flex items-center justify-center">
-                <Icon.Phone className="w-5 h-5 text-gold" />
+                <Icon.Calendar className="w-5 h-5 text-gold" />
               </div>
               <div>
                 <div className="text-xs uppercase tracking-wide text-white/70">
-                  Emergency Hotline
+                  Office Hours
                 </div>
-                <div className="font-semibold text-lg">(056) 333-XXXX</div>
+                <div className="font-semibold text-lg">Mon–Fri, 8:00 AM – 5:00 PM</div>
               </div>
             </div>
             <div className="h-px bg-white/20 my-4" />
             <ul className="space-y-3 text-sm">
               {[
-                "Open Mon–Fri, 8:00 AM – 5:00 PM",
                 "Saturday triage clinic: 8:00 AM – 12:00 PM",
                 "After-hours: Tanod patrol on standby",
               ].map((line) => (
@@ -814,11 +813,6 @@ function Contact() {
                 value: "Cumadcad, Castilla, Sorsogon, 4719, Philippines",
               },
               {
-                icon: Icon.Phone,
-                label: "Phone",
-                value: "(056) 333-XXXX",
-              },
-              {
                 icon: Icon.Envelope,
                 label: "Email",
                 value: "info@barangaycumadcad.gov.ph",
@@ -968,7 +962,7 @@ function Footer() {
         <div className="md:col-span-5">
           <div className="flex items-center gap-3 mb-4">
             <Image
-              src="/Cumadcad-logo.webp"
+              src="/Cumadcad-logo.png"
               alt=""
               width={44}
               height={44}
@@ -1043,10 +1037,6 @@ function Footer() {
             <li className="flex items-start gap-2.5">
               <Icon.MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
               <span>Cumadcad, Castilla, Sorsogon</span>
-            </li>
-            <li className="flex items-start gap-2.5">
-              <Icon.Phone className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-              <span>(056) 333-XXXX</span>
             </li>
             <li className="flex items-start gap-2.5">
               <Icon.Envelope className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
